@@ -1,0 +1,55 @@
+apt-packages:
+  - wget
+  - bzip2
+  - adduser
+  - xz-utils
+  - build-essential
+  - procps
+  - curl
+  - file
+  - git
+  - cmake
+  - htop
+  - jq
+  - delta
+  - sqlite3
+  - golang-go
+  - neovim
+  - nodejs
+  - nano
+  - npm
+  - colordiff
+
+brew-packages:
+  - mcfly
+  - fzf
+  - gh
+  - zoxide
+  - starship
+  - tldr
+  - fd
+  - uv
+
+code-server-packages:
+  - ms-python.python
+  - ms-python.debugpy
+  - detachhead.basedpyright
+  - mhutchie.git-graph
+  - akamud.vscode-theme-onedark
+  - charliermarsh.ruff
+  - tamasfe.even-better-toml
+  - github.vscode-pull-request-github
+  - christian-kohler.path-intellisense
+  - redhat.vscode-yaml
+  - mechatroner.rainbow-csv
+  - zhuangtongfa.material-theme
+  - johnpapa.vscode-peacock
+  - uloco.theme-bluloco-dark
+  - uloco.theme-bluloco-light
+  - alefragnani.project-manager
+  - continue.continue
+
+uv-tool-packages:
+  - jupyterlab
+  - basedpyright
+  - ruff

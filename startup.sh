@@ -1,0 +1,1 @@
+pm2 start "jupyter-lab --ip 0.0.0.0 --port 8011 --allow-root --no-browser" 
