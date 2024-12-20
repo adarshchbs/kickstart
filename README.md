@@ -1,11 +1,10 @@
 # Remote ML IDE Docker Image
 
-A Docker-based development environment that combines:
-- VS Code Server
-- VS Code Extensions
+- 💻 VS Code Server
+- 🧩 VS Code Extensions
   - python
-  - based-pyright (python language server: varient of pylance)
-  - ruff (formatter)
+  - 🔬 based-pyright (python language server: varient of pylance)
+  - ✨ ruff (formatter)
   - git-graph
   - path-intellisense
   - vscode-pull-request-github
