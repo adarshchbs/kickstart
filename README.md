@@ -42,7 +42,7 @@ The easiest way to get started is using the provided `create_container.sh` scrip
 
 1. Download the script:
 ```bash
-wget https://raw.githubusercontent.com/adarshchbs/kickstart/main/create_container.sh
+wget https://raw.githubusercontent.com/adarshchbs/remote-ml-ide/main/create_container.sh
 chmod +x create_container.sh
 ```
 
@@ -116,7 +116,7 @@ All versions are available as releases on the GitHub repository. Each release in
 - The Docker image as a compressed tar file
 - Installation instructions
 
-To check available versions, visit the [releases page](https://github.com/adarshchbs/kickstart/releases).
+To check available versions, visit the [releases page](https://github.com/adarshchbs/remote-ml-ide/releases).
 
 ## Contributing
 
