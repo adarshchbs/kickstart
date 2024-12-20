@@ -10,8 +10,17 @@ A Docker-based development environment that combines:
   - path-intellisense
   - vscode-pull-request-github
   - and many more
+- Jupyter lab
 - Python development tools via `uv`
 - Homebrew packages
+  - 🧠 `mcfly`: Smart command history search/completion for shell
+  - 🔍 `fzf`: Fuzzy file finder & command-line filter
+  - 🐙 `gh`: GitHub's official CLI tool
+  - ⚡ `zoxide`: Smarter `cd` command with directory jump
+  - 🚀 `starship`: Fast, minimal cross-shell prompt
+  - 📚 `tldr`: Simplified community-driven man pages
+  - 🔎 `fd`: User-friendly alternative to `find`
+  - 📦 `uv`: Fast Python package installer & resolver
 - Common development utilities
 - Process management via PM2
 
