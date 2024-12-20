@@ -36,19 +36,57 @@ docker load -i docker-image.tar.gz
 
 ## Usage
 
-### Basic Run Command
+### Using the Container Creation Script
+
+The easiest way to get started is using the provided `create_container.sh` script:
+
+1. Download the script:
+```bash
+wget https://raw.githubusercontent.com/adarshchbs/kickstart/main/create_container.sh
+chmod +x create_container.sh
+```
+
+2. Run the script:
+```bash
+./create_container.sh
+```
+
+The script will:
+- Clean up any existing container/image with the same name
+- Load the image from a local `docker-image.tar.gz` if available, otherwise pull from registry
+- Start the container with the following port mappings:
+  - VS Code Server: 8023
+  - Jupyter Lab: 8024
+  - Misc Port: 8025
+- Mount a `workspace` directory from your current location
+- Display access URLs and perform health checks
+
+### Manual Docker Run Command
+
+If you prefer to run the container manually:
 
 ```bash
 docker run -d \
   --name ml-ide \
-  -p 8023:8023 \
-  -p 8024:8024 \
+  -p 0.0.0.0:8023:8023 \
+  -p 0.0.0.0:8024:8024 \
+  -p 0.0.0.0:8025:8025 \
+  -v "$(pwd)/workspace:/root/workspace" \
   ghcr.io/adarshchbs/remote-ml-ide:latest
 ```
 
 After starting the container:
-1. Access VS Code Server through your browser at `http://localhost:8023`
-2. The environment comes pre-configured with common development tools and extensions
+1. Access VS Code Server at `http://0.0.0.0:8023`
+2. Access Jupyter Lab at `http://0.0.0.0:8024`
+3. The environment comes pre-configured with common development tools and extensions
+
+### Available Services
+
+| Service | Port | URL |
+|---------|------|-----|
+| VS Code Server | 8023 | http://0.0.0.0:8023 |
+| Jupyter Lab | 8024 | http://0.0.0.0:8024 |
+| Misc Services | 8025 | http://0.0.0.0:8025 |
 
 ## Build Process
 
@@ -92,3 +130,11 @@ To contribute:
 ## Support
 
 For issues and feature requests, please use the GitHub issues page.
+
+## Security Note
+
+The container exposes services on 0.0.0.0, which makes them accessible from any network interface. In production environments:
+- Use appropriate firewall rules
+- Consider using reverse proxy with SSL/TLS
+- Implement authentication if needed
+- Use private networks when possible
