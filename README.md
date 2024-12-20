@@ -149,11 +149,3 @@ To contribute:
 ## Support
 
 For issues and feature requests, please use the GitHub issues page.
-
-## Security Note
-
-The container exposes services on 0.0.0.0, which makes them accessible from any network interface. In production environments:
-- Use appropriate firewall rules
-- Consider using reverse proxy with SSL/TLS
-- Implement authentication if needed
-- Use private networks when possible
