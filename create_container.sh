@@ -49,9 +49,9 @@ fi
 # Run the container with port mappings
 echo "Starting container..."
 if docker run -d \
-    -p ${CODE_SERVER_PORT}:8023 \
-    -p ${JUPYTER_PORT}:8024 \
-    -p ${MISC_PORT}:${MISC_PORT} \
+    -p 0.0.0.0:${CODE_SERVER_PORT}:8023 \
+    -p 0.0.0.0:${JUPYTER_PORT}:8024 \
+    -p 0.0.0.0:${MISC_PORT}:${MISC_PORT} \
     -v "$(pwd)/workspace:/root/workspace" \
     -e CODE_SERVER_PORT=${CODE_SERVER_PORT} \
     -e JUPYTER_PORT=${JUPYTER_PORT} \
@@ -62,22 +62,22 @@ if docker run -d \
     
     echo "✅ Container started successfully!"
     echo "Access the services at:"
-    echo "💻 VS Code Server: http://localhost:${CODE_SERVER_PORT}"
-    echo "📓 Jupyter Lab: http://localhost:${JUPYTER_PORT}"
-    echo "🔌 Misc Port: http://localhost:${MISC_PORT}"
+    echo "💻 VS Code Server: http://0.0.0.0:${CODE_SERVER_PORT}"
+    echo "📓 Jupyter Lab: http://0.0.0.0:${JUPYTER_PORT}"
+    echo "🔌 Misc Port: http://0.0.0.0:${MISC_PORT}"
     
     # Wait for services to be ready
     echo "Waiting for services to start..."
     sleep 5
     
     # Check if services are responding
-    if curl -s -f http://localhost:${CODE_SERVER_PORT} > /dev/null; then
+    if curl -s -f http://0.0.0.0:${CODE_SERVER_PORT} > /dev/null; then
         echo "✅ VS Code Server is running"
     else
         echo "⚠️  VS Code Server may not be running properly"
     fi
     
-    if curl -s -f http://localhost:${JUPYTER_PORT} > /dev/null; then
+    if curl -s -f http://0.0.0.0:${JUPYTER_PORT} > /dev/null; then
         echo "✅ Jupyter Lab is running"
     else
         echo "⚠️  Jupyter Lab may not be running properly"
