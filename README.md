@@ -51,6 +51,8 @@ chmod +x create_container.sh
 ./create_container.sh
 ```
 
+Setup ports number in the script before running. It requires three ports. The default are set to be 8023-8025.
+
 The script will:
 - Clean up any existing container/image with the same name
 - Load the image from a local `docker-image.tar.gz` if available, otherwise pull from registry
