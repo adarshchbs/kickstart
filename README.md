@@ -2,6 +2,14 @@
 
 A Docker-based development environment that combines:
 - VS Code Server
+- VS Code Extensions
+  - python
+  - based-pyright (python language server: varient of pylance)
+  - ruff (formatter)
+  - git-graph
+  - path-intellisense
+  - vscode-pull-request-github
+  - and many more
 - Python development tools via `uv`
 - Homebrew packages
 - Common development utilities
