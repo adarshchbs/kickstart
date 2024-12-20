@@ -22,7 +22,7 @@ A Docker-based development environment that combines:
   - 🔎 `fd`: User-friendly alternative to `find`
   - 📦 `uv`: Fast Python package installer & resolver
 - Common development utilities
-- Process management via PM2
+- Process management via PM2: PM2 keeps your application running continuously, automatically restarts it if it crashes, and manages logs - making it ideal for running services like VS Code Server and Jupyter Lab reliably.
 
 ## Image Details
 
